@@ -3,6 +3,6 @@
 **Käyttäjät:** Pelaaja
 
 **Käyttäjien toiminnot:**
-	- miinojen paljastaminen ruuduista
-	- lippujen lisääminen paljastamattomiin ruutuihin
-	- mahdollisesti kysymys merkkien lisääminen paljastamattomiin ruutuihin
+- miinojen paljastaminen ruuduista
+- lippujen lisääminen paljastamattomiin ruutuihin
+- mahdollisesti kysymys merkkien lisääminen paljastamattomiin ruutuihin
