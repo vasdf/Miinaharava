@@ -2,7 +2,7 @@
 
 Hei
 
-Projektina on tehdä toimiva miinaharava.
+Projektina on tehdä toimiva miinaharava peli.
 
 ##Dokumentaatio
 [aiheen kuvaus](dokumentaatio/aiheenKuvausJaRakenne.md)
