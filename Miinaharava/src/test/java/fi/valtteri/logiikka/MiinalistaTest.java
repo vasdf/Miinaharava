@@ -13,6 +13,9 @@ public class MiinalistaTest {
     Miinalista miinalista;
     Miina miina1;
     Miina miina2;
+    Miina miina3;
+    Miina miina4;
+    Miina miina5;
     
     public MiinalistaTest() {
     }
@@ -28,10 +31,18 @@ public class MiinalistaTest {
     @Before
     public void setUp() {
         miinalista = new Miinalista();
-        miina1 = new Miina(2,4);
-        miina2 = new Miina(3,4);
+        
+        miina1 = new Miina(1,3);
+        miina2 = new Miina(2,3);
+        miina3 = new Miina(1,1);
+        miina4 = new Miina(3,2);
+        miina5 = new Miina(2,4);
+        
         miinalista.lisaaMiina(miina1);
         miinalista.lisaaMiina(miina2);
+        miinalista.lisaaMiina(miina3);
+        miinalista.lisaaMiina(miina4);
+        miinalista.lisaaMiina(miina5);
     }
     
     @After
@@ -40,7 +51,7 @@ public class MiinalistaTest {
     
     @Test
     public void miinojaLisataanListaanOikeaMaara() {
-        assertEquals(2,miinalista.getMiinalista().size());
+        assertEquals(5,miinalista.getMiinalista().size());
     }
     
     @Test
@@ -48,5 +59,21 @@ public class MiinalistaTest {
         assertEquals(miina1,miinalista.getMiinalista().get(0));
         
         assertEquals(miina2,miinalista.getMiinalista().get(1));
+    }
+    
+    @Test
+    public void onkoMiinatLahekkainTesti() {
+        assertTrue(miinalista.onkoLahekkain(2, 2, miina1));
+        assertTrue(miinalista.onkoLahekkain(2 , 2, miina2));
+        assertTrue(miinalista.onkoLahekkain(2 , 2, miina3));
+        assertTrue(miinalista.onkoLahekkain(2, 2, miina4));
+        assertFalse(miinalista.onkoLahekkain(2, 2, miina5));
+    }
+    
+    @Test
+    public void oikeaMaaraLahellaOleviaMiinoja() {
+        assertEquals(4, miinalista.montakoMiinaaYmparilla(2, 2));
+        
+        assertEquals(3, miinalista.montakoMiinaaYmparilla(3, 3));
     }
 }
