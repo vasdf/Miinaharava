@@ -7,4 +7,5 @@
 - lippujen lisääminen paljastamattomiin ruutuihin
 - mahdollisesti kysymys merkkien lisääminen paljastamattomiin ruutuihin
 
-![Määrittelyvaiheen luokkakaavio](dokumentaatio/alustavaluokkakaavio.png)
+
+![Määrittelyvaiheen luokkakaavio](alustavaluokkakaavio.png)
