@@ -55,6 +55,14 @@ public class MiinalistaTest {
     }
     
     @Test
+    public void samaaMiinaaEiVoiLisataUudestaan() {
+        miinalista.lisaaMiina(miina1);
+        miinalista.lisaaMiina(miina2);
+        
+        assertEquals(5,miinalista.getMiinalista().size());
+    }
+    
+    @Test
     public void halututMiinatLisataanListaan() {
         assertEquals(miina1,miinalista.getMiinalista().get(0));
         
