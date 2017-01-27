@@ -9,6 +9,3 @@ Projektina on tehdä toimiva miinaharava peli.
 [tuntikirjanpito](dokumentaatio/tuntikirjanpito.md),
 [pit-raportti](dokumentaatio/pit-raportti/201701271747),
 [checkstyle-raportti](dokumentaatio/checkstyle-raportti/site)
-
-
-![Määrittelyvaiheen luokkakaavio](dokumentaatio/alustavaluokkakaavio.png)
