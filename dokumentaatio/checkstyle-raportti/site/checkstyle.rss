@@ -25,7 +25,7 @@ under the License.
     <language>en-us</language>
     <copyright>&#169;2017</copyright>
     <item>
-      <title>File: 4,
+      <title>File: 5,
              Errors: 0,
              Warnings: 0,
              Infos: 0
@@ -46,7 +46,7 @@ under the License.
           <tbody>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#fi.valtteri.logiikka.Miina.java">fi/valtteri/logiikka/Miina.java</a>
+                  <a href="${project.url}/checkstyle.html#fi.miinaharava.logiikka.Miinojenluoja.java">fi/miinaharava/logiikka/Miinojenluoja.java</a>
                 </td>
                 <td>
                   0
@@ -60,7 +60,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#fi.valtteri.logiikka.Miinalista.java">fi/valtteri/logiikka/Miinalista.java</a>
+                  <a href="${project.url}/checkstyle.html#fi.miinaharava.logiikka.Harava.java">fi/miinaharava/logiikka/Harava.java</a>
                 </td>
                 <td>
                   0
@@ -74,7 +74,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#fi.valtteri.logiikka.Numeroruutu.java">fi/valtteri/logiikka/Numeroruutu.java</a>
+                  <a href="${project.url}/checkstyle.html#fi.miinaharava.logiikka.Miinalista.java">fi/miinaharava/logiikka/Miinalista.java</a>
                 </td>
                 <td>
                   0
@@ -88,7 +88,21 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#fi.valtteri.logiikka.Miinojenluoja.java">fi/valtteri/logiikka/Miinojenluoja.java</a>
+                  <a href="${project.url}/checkstyle.html#fi.miinaharava.logiikka.Kentta.java">fi/miinaharava/logiikka/Kentta.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fi.miinaharava.logiikka.Ruutu.java">fi/miinaharava/logiikka/Ruutu.java</a>
                 </td>
                 <td>
                   0

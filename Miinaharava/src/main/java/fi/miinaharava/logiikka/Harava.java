@@ -10,10 +10,6 @@ public class Harava {
     public void haravoiRuutu(Ruutu ruutu) {
         ruutu.haravoi();
 
-        if (ruutu.onkoHaravoitu() == true && ruutu.onkoMiina() == true) {
-            //HAVIA PELI
-        }
-
         haravoiRuudutYmparilta(ruutu);
     }
 

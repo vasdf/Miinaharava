@@ -8,4 +8,4 @@
 - mahdollisesti kysymys merkkien lisääminen paljastamattomiin ruutuihin
 
 
-![Määrittelyvaiheen luokkakaavio](alustavaluokkakaavio.png)
+![Määrittelyvaiheen luokkakaavio](luokkakaavio2.0.png)

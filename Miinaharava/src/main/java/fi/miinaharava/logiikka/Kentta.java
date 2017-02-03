@@ -3,8 +3,8 @@ package fi.miinaharava.logiikka;
 public class Kentta {
     
     private Ruutu[][] ruudukko;
-    private int sivunpituus;//ei tarvitse välttämättä
-    private int miinojenmaara;//ei tarvitse välttämättä
+    private int sivunpituus;
+    private int miinojenmaara;
     private Miinojenluoja miinojenluoja;
     private Harava harava;
 
@@ -25,7 +25,7 @@ public class Kentta {
         ruudukko = miinojenluoja.luoMiinatSatunnaisesti();
     }
     
-    public void Haravoi(Ruutu ruutu) {
+    public void haravoi(Ruutu ruutu) {
         harava.haravoiRuutu(ruutu);;
     }
     
