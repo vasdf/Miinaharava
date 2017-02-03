@@ -1,15 +1,15 @@
-package fi.valtteri.logiikka;
+package fi.miinaharava.logiikka;
 
-import java.util.ArrayList;
 
+//luultavasti poistetaan koko luokka(ota metodit talteen)
 public class Miinalista {
 
-    private ArrayList<Miina> miinat;
+    //private ArrayList<Miina> miinat;
 
     public Miinalista() {
-        miinat = new ArrayList<>();
+        //miinat = new ArrayList<>();
     }
-
+/*
     public ArrayList getMiinalista() {
         return miinat;
     }
@@ -35,4 +35,5 @@ public class Miinalista {
     public boolean onkoLahekkain(int x, int y, Miina miina2) {
         return Math.abs(x - miina2.getX()) <= 1 && Math.abs(y - miina2.getY()) <= 1;
     }
+}*/
 }
