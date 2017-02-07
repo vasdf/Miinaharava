@@ -19,7 +19,7 @@ public class Miinojenluoja {
     public Ruutu[][] luoMiinatSatunnaisesti() {
         int miinojaluotu = 0;
 
-        while (true) {
+        while (miinojaluotu < miinojenmaara) {
             int x = random.nextInt(sivunpituus);
             int y = random.nextInt(sivunpituus);
 
@@ -28,10 +28,6 @@ public class Miinojenluoja {
                 miinojaluotu++;
 
                 kasvataYmparillaOlevienRuutujenArvoja(ruudukko[y][x]);
-            }
-
-            if (miinojaluotu >= miinojenmaara) {
-                break;
             }
         }
 
