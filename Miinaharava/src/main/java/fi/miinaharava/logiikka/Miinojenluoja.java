@@ -1,7 +1,10 @@
 package fi.miinaharava.logiikka;
 
 import java.util.Random;
-
+/**
+ * Luokka luo valmiiksi luotuun Ruutu olioita sisältävään taulukkoon
+ * miinat eli muuttaa Ruutu olion boolean arvon miina todeksi.
+ */
 public class Miinojenluoja {
 
     private int sivunpituus;
@@ -15,7 +18,14 @@ public class Miinojenluoja {
         this.ruudukko = kentta;
         this.random = new Random();
     }
-
+    /**
+     * Metodi muuttaa konstruktorissa saamansa
+     * Ruutu olioita sisältävän taulun Ruutuja miinoiksi.
+     * 
+     * Ruutuja muutetaan konstruktorissa annettu miinojemaara.
+     * 
+     * @return taulukko, jossa Ruutuja on muunnettu miinoiksi
+     */
     public Ruutu[][] luoMiinatSatunnaisesti() {
         int miinojaluotu = 0;
 
@@ -33,7 +43,14 @@ public class Miinojenluoja {
 
         return ruudukko;
     }
-
+    /**
+     * Metodi kasvattaa ruudun, joka muunnettiin miinaksi ympärillä
+     * olevien ruutujen arvoja yhdellä. Ruudun arvo kertoo ympärillä olevien
+     * miinojen määrän.
+     * 
+     *
+     * @param ruutu, joka muunnettiin miinaksi.
+     */
     public void kasvataYmparillaOlevienRuutujenArvoja(Ruutu ruutu) {
         for (int y = 0; y < sivunpituus; y++) {
             for (int x = 0; x < sivunpituus; x++) {
@@ -43,8 +60,14 @@ public class Miinojenluoja {
             }
         }
     }
-
+    /**
+     * Metodi kertoo onko ruudut vierekkain eli koskevatko reunat/kulmat.
+     * 
+     * @param ruutu1, toinen verrattavista ruuduista
+     * @param ruutu2, toinen verrattavista ruuduista
+     * @return boolean onko annetut ruudut vierekkäin
+     */
     public boolean onkoLahekkain(Ruutu ruutu1, Ruutu ruutu2) {
         return Math.abs(ruutu1.getX() - ruutu2.getX()) <= 1 && Math.abs(ruutu1.getY() - ruutu2.getY()) <= 1;
-    }   
+    }
 }

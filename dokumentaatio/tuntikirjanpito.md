@@ -9,3 +9,4 @@ Päivä | Tunnit | Kuvaus
 07.02.2017 | 1h | käyttöliittymän suunnittelua
 08.02.2017 | 3.5h | käyttöliittymän suunnittelua ja sen koodaamista
 09.02.2017 | 4h | käyttöliittymän tekoa, logiikan yhdistämistä käyttöliittymään ja logiikka puutosten paikkailua
+10.02.2017 | 2h | Javadoc

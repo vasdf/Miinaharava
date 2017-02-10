@@ -2,6 +2,7 @@ package fi.miinaharava.logiikka;
 
 import java.util.ArrayList;
 
+//*ei valmis*
 public class VierekkaistenRuutujenPainaja {
 
     private VierekkaistenRuutujenEtsija vierekkaistenruutujenetsija;

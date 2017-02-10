@@ -3,8 +3,8 @@ package fi.miinaharava.logiikka;
 import static java.lang.Math.sqrt;
 import java.util.ArrayList;
 import java.util.List;
-import javax.swing.JButton;
 
+//*Ei valmis*
 public class VierekkaistenRuutujenEtsija {
 
     private List<Painike> painikkeet;
