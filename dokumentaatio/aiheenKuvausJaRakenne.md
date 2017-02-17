@@ -8,8 +8,11 @@
 - mahdollisesti kysymys merkkien lisääminen paljastamattomiin ruutuihin
 - voi vaihtaa kentän kokoa/miinojen määrää ja aloittaa uuden pelin
 
-**Kaavioita**\n
-![Määrittelyvaiheen luokkakaavio](miinaharavaluokkakaavio3.0.png)\n
-Tällä hetkellä ei ole muita käyttötapauksia(tulee lisää)\n
+**Kaavioita**
+
+![Määrittelyvaiheen luokkakaavio](miinaharavaluokkakaavio3.0.png)
+
+Tällä hetkellä ei ole muita käyttötapauksia(tulee lisää)
+
 ![Sekvenssikaavio](miinaharavasekvenssikaavio1.png)
 
