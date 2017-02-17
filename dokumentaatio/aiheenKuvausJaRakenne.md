@@ -12,7 +12,7 @@
 
 ![Määrittelyvaiheen luokkakaavio](miinaharavaluokkakaavio3.0.png)
 
-Tällä hetkellä ei ole muita käyttötapauksia(tulee lisää)
+Tällä hetkellä ei ole muita toimivia käyttötapauksia(tulee lisää)
 
 ![Sekvenssikaavio](miinaharavasekvenssikaavio1.png)
 
