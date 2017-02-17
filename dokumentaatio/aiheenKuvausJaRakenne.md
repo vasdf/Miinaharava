@@ -8,7 +8,7 @@
 - mahdollisesti kysymys merkkien lisääminen paljastamattomiin ruutuihin
 - voi vaihtaa kentän kokoa/miinojen määrää ja aloittaa uuden pelin
 
-**Kaavioita**
+**Kaavioita:**
 
 ![Määrittelyvaiheen luokkakaavio](miinaharavaluokkakaavio3.0.png)
 
