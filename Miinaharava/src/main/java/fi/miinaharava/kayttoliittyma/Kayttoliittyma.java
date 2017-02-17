@@ -1,35 +1,36 @@
 package fi.miinaharava.kayttoliittyma;
 
 import fi.miinaharava.logiikka.Kentta;
-import fi.miinaharava.logiikka.Painike;
+import fi.miinaharava.logiikka.Ruutu;
 import java.awt.Container;
 import java.awt.Dimension;
-import java.awt.GridBagLayout;
+import java.awt.Font;
 import java.awt.GridLayout;
-import java.awt.event.ActionListener;
+import java.awt.Insets;
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JTextArea;
 import javax.swing.WindowConstants;
+import javax.swing.plaf.FontUIResource;
 
 public class Kayttoliittyma implements Runnable {
 
     private JFrame frame;
     private Kentta kentta;
-    private List<Painike> painikkeet;
-
+    private Ruutu[][] ruudukko;
+    private int sivunpituus;
+    
     public Kayttoliittyma(Kentta kentta) {
         this.kentta = kentta;
-        painikkeet = new ArrayList<>();
+        this.ruudukko = kentta.getKentta();
+        this.sivunpituus = ruudukko.length;
     }
 
     @Override
     public void run() {
         frame = new JFrame("Miinaharava");
-        frame.setPreferredSize(new Dimension(600, 600));
+        frame.setPreferredSize(new Dimension(400, 400));
 
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
@@ -40,26 +41,17 @@ public class Kayttoliittyma implements Runnable {
     }
 
     private void luoKomponentit(Container container) {
-        container.setLayout(new GridLayout(10, 10));
-
-        for (int y = 0; y < 10; y++) {
-            for (int x = 0; x < 10; x++) {
-                JButton painike = new JButton("" + x + "," + y);
-                Painike painikee = new Painike(painike, x, y, kentta.getRuutu(x, y).getArvo());
-
-                painikkeet.add(painikee);
+        container.setLayout(new GridLayout(sivunpituus, sivunpituus));
+        
+        for (int y = 0; y < sivunpituus; y++) {
+            for (int x = 0; x < sivunpituus; x++) {
+                TapahtumaKuuntelija kuuntelija = new TapahtumaKuuntelija(ruudukko[y][x], kentta);
+                
+                ruudukko[y][x].getPainike().addActionListener(kuuntelija);
+                
+                container.add(ruudukko[y][x].getPainike());
             }
         }
-
-        for (Painike painike : painikkeet) {
-            TapahtumaKuuntelija kuuntelija = new TapahtumaKuuntelija(kentta.getRuutu(painike.getX(), painike.getY()), painike, kentta);
-            kuuntelija.asetaPainikeLista(painikkeet);
-
-            painike.getPainike().addActionListener(kuuntelija);
-
-            container.add(painike.getPainike());
-        }
-
     }
 
 }

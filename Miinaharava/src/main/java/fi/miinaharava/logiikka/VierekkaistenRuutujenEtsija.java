@@ -1,49 +1,52 @@
 package fi.miinaharava.logiikka;
 
-import static java.lang.Math.sqrt;
 import java.util.ArrayList;
-import java.util.List;
 
-//*Ei valmis*
+/**
+ * Luokka auttaa Ruuduista koostuvan taulukon läpikäymisessä
+ */
 public class VierekkaistenRuutujenEtsija {
 
-    private List<Painike> painikkeet;
+    private Ruutu[][] ruudukko;
 
-    public VierekkaistenRuutujenEtsija() {
-
+    public VierekkaistenRuutujenEtsija(Ruutu[][] ruudukko) {
+        this.ruudukko = ruudukko;
     }
+    
 
-    public VierekkaistenRuutujenEtsija(List<Painike> painikkeet) {
-        this.painikkeet = painikkeet;
-    }
+    /**
+     * Metodi etsii Ruudun vieressä olevat ruudut.
+     * HUOM: Ei palauta listassamiinoja tai jo painettuja ruutuja
+     * eli ruutuja, joiden painikkeet ovat pois käytöstä.
+     *
+     * @param ruutu Ruutu, jonka viereiset ruudut halutaan etsiä
+     *
+     * @return Lista, joka sisältää viereiset ruudut
+     */
+    public ArrayList<Ruutu> etsiVierekkaisetRuudut(Ruutu ruutu) {
+        ArrayList<Ruutu> vierekkaiset = new ArrayList<>();
 
-    public ArrayList<Painike> etsiVierekkaisetPainikkeet(Painike painike) {
-        ArrayList<Painike> vierekkaiset = new ArrayList<>();
-
-        for (int y = 0; y < sqrt(painikkeet.size()); y++) {
-            for (int x = 0; x < sqrt(painikkeet.size()); x++) {
-                Painike painike2 = haePainike(x, y);
-
-                if (onkoVierekkain(painike, painike2)) {
-                    vierekkaiset.add(painike2);
+        for (int y = 0; y < ruudukko.length; y++) {
+            for (int x = 0; x < ruudukko.length; x++) {
+                if (onkoVierekkain(ruutu, ruudukko[y][x]) && ruudukko[y][x].onkoMiina() == false && ruudukko[y][x].getPainike().isEnabled() == true) {
+                    vierekkaiset.add(ruudukko[y][x]);
                 }
             }
         }
 
         return vierekkaiset;
     }
-
-    public Painike haePainike(int x, int y) {
-        for (Painike painike : painikkeet) {
-            if (painike.getX() == x && painike.getY() == y) {
-                return painike;
-            }
-        }
-
-        return null;
-    }
-
-    public boolean onkoVierekkain(Painike painike1, Painike painike2) {
-        return Math.abs(painike1.getX() - painike2.getX()) <= 1 && Math.abs(painike1.getY() - painike2.getY()) <= 1;
+    
+    /**
+     * Metodi kertoo ovatko ruudut 1 ja 2 vierekkäin
+     * eli koskevatko niiden reunat/kulmat
+     * 
+     * @param ruutu1
+     * @param ruutu2
+     * 
+     * @return boolean onko ruuduit vierekkäin
+     */
+    public boolean onkoVierekkain(Ruutu ruutu1, Ruutu ruutu2) {
+        return Math.abs(ruutu1.getX() - ruutu2.getX()) <= 1 && Math.abs(ruutu1.getY() - ruutu2.getY()) <= 1;
     }
 }

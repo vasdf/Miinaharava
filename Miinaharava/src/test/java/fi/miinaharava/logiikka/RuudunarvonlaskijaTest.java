@@ -1,10 +1,7 @@
 
 package fi.miinaharava.logiikka;
 
-import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -13,14 +10,6 @@ public class RuudunarvonlaskijaTest {
     private Ruutu[][] ruudukko;
     
     public RuudunarvonlaskijaTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
     }
     
     @Before
@@ -32,18 +21,16 @@ public class RuudunarvonlaskijaTest {
                 ruudukko[y][x] = new Ruutu(x, y);
             }
         }
+        
         ruudukko[3][4].asetaMiina();
         ruudukko[4][4].asetaMiina();
         ruudukko[5][5].asetaMiina();
         ruudukko[0][0].asetaMiina();
         ruudukko[9][6].asetaMiina();
         
-        this.laskija = new Ruudunarvonlaskija(ruudukko);
+        this.laskija = new Ruudunarvonlaskija();
+        this.laskija.laskeArvot(ruudukko);
         
-    }
-    
-    @After
-    public void tearDown() {
     }
 
     @Test
@@ -54,6 +41,10 @@ public class RuudunarvonlaskijaTest {
         assertEquals(2,ruudukko[4][3].getArvo());
         laskija.laskeArvo(ruudukko[0][2]);
         assertEquals(0,ruudukko[0][2].getArvo());
+        laskija.laskeArvo(ruudukko[3][4]);
+        assertEquals(-1, ruudukko[3][4].getArvo());
+        laskija.laskeArvo(ruudukko[3][4]);
+        assertEquals(-1, ruudukko[5][5].getArvo());
     }
     
     @Test
@@ -63,9 +54,11 @@ public class RuudunarvonlaskijaTest {
         assertEquals(2,ruudukko[4][3].getArvo());
         assertEquals(0,ruudukko[0][2].getArvo());
         assertEquals(0,ruudukko[9][9].getArvo());
-        assertEquals(1,ruudukko[9][6].getArvo());
+        assertEquals(1,ruudukko[8][7].getArvo());
         assertEquals(3,ruudukko[4][5].getArvo());
         assertEquals(1,ruudukko[6][6].getArvo());
+        assertEquals(-1, ruudukko[9][6].getArvo());
+        assertEquals(-1, ruudukko[0][0].getArvo());
     }    
     
     @Test

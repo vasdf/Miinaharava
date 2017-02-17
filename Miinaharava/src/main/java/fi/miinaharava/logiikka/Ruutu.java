@@ -1,38 +1,53 @@
 package fi.miinaharava.logiikka;
 
-public class Ruutu {
+import javax.swing.JButton;
 
+/**
+ * Luokkaa tarvitaan pelikentän, eli taulun, joka
+ * koostuu Ruutu olioista, luomiseen
+ */
+public class Ruutu {
+    
+    private JButton painike;
     private int x;
     private int y;
-    private int arvo; //kertoo miinojen maaran ymparilla
+    private int arvo;
     private boolean miina;
-    private boolean haravoitu;
 
     public Ruutu(int x, int y) {
         this.x = x;
         this.y = y;
         this.arvo = 0;
-        this.miina = false;
-        this.haravoitu = false;
+        this.miina = false;     
     }
-
-    public int getX() {
-        return x;
+    
+    public JButton getPainike() {
+        return painike;
     }
-
-    public int getY() {
-        return y;
+    
+    public void setPainike(JButton painike) {
+        this.painike = painike;
     }
-
-    public void haravoi() {
-        haravoitu = true;
+    
+    /**
+     * Metodi asettaa JButton painikkeen tekstin halutuksi riippuen onko kyseessä
+     * miina vai ei ja poistaa sen käytöstä. 
+     */
+    public void paina() {
+        if (miina == true) {
+            painike.setText("-1");
+        } else {
+            painike.setText("" + arvo);
+        }
+        
+        painike.setEnabled(false);
     }
-
-    public boolean onkoHaravoitu() {
-        return haravoitu;
-    }
-
+    /**
+     * Metodi asettaa boolean muuttuja miina todeksi. Muuttujan avulla
+     * tiedetään onko kyseinen ruutu miina vai ei.
+     */
     public void asetaMiina() {
+        arvo = -1;
         miina = true;
     }
 
@@ -46,5 +61,13 @@ public class Ruutu {
 
     public int getArvo() {
         return arvo;
+    }
+       
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
     }
 }

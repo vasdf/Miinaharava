@@ -1,37 +1,27 @@
 package fi.miinaharava.logiikka;
 
-import fi.miinaharava.logiikka.Ruutu;
-import org.junit.After;
-import org.junit.AfterClass;
+import javax.swing.JButton;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class RuutuTest {
 
     Ruutu ruutu;
+    JButton painike;
 
     public RuutuTest() {
-    }
-
-    @BeforeClass
-    public static void setUpClass() {
-    }
-
-    @AfterClass
-    public static void tearDownClass() {
     }
 
     @Before
     public void setUp() {
         ruutu = new Ruutu(2, 3);
+        
+        painike = new JButton();
+        
+        ruutu.setPainike(painike);
     }
-
-    @After
-    public void tearDown() {
-    }
-
+    
     @Test
     public void sijaintiOikein() {
         assertEquals(2, ruutu.getX());
@@ -40,26 +30,16 @@ public class RuutuTest {
 
     @Test
     public void arvoAsetetaabOikein() {
-        ruutu.setArvo(4);
+        assertEquals(0, ruutu.getArvo());
 
-        assertEquals(4, ruutu.getArvo());
+        ruutu.setArvo(5);
+
+        assertEquals(5, ruutu.getArvo());
     }
 
-    @Test
-    public void aluksiHaravointiFalse() {
-        assertFalse(ruutu.onkoHaravoitu());
-    }
-    
     @Test
     public void aluksiOnkoMiinaFalse() {
         assertFalse(ruutu.onkoMiina());
-    }
-
-    @Test
-    public void muutoksenJalkeenHaravointiTrue() {
-        ruutu.haravoi();
-
-        assertTrue(ruutu.onkoHaravoitu());
     }
     
     @Test
@@ -67,14 +47,24 @@ public class RuutuTest {
         ruutu.asetaMiina();
 
         assertTrue(ruutu.onkoMiina());
+        assertEquals(-1, ruutu.getArvo());
     }
-
+    
     @Test
-    public void arvoOikein() {
-        assertEquals(0, ruutu.getArvo());
-
-        ruutu.setArvo(5);
-
-        assertEquals(5, ruutu.getArvo());
+    public void painikkeenPainaminenToimii() {
+        ruutu.setArvo(4);
+        ruutu.paina();
+        
+        assertEquals("4", painike.getText());
+        assertFalse(painike.isEnabled());
+    }
+    
+    @Test
+    public void painikkeenPainaminenToimiiJosMiina() {
+        ruutu.asetaMiina();
+        ruutu.paina();
+        
+        assertEquals("-1", painike.getText());
+        assertFalse(painike.isEnabled());
     }
 }

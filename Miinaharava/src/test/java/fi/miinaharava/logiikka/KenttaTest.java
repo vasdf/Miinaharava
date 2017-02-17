@@ -1,9 +1,6 @@
 package fi.miinaharava.logiikka;
 
-import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -14,21 +11,9 @@ public class KenttaTest {
     public KenttaTest() {
     }
 
-    @BeforeClass
-    public static void setUpClass() {
-    }
-
-    @AfterClass
-    public static void tearDownClass() {
-    }
-
     @Before
     public void setUp() {
         kentta = new Kentta(10, 10);
-    }
-
-    @After
-    public void tearDown() {
     }
 
     @Test
@@ -43,6 +28,7 @@ public class KenttaTest {
         }
         
         assertEquals(100, ruutuja);
+        assertEquals(10, kentta.getKentta().length);
     }
     
     @Test(expected=ArrayIndexOutOfBoundsException.class)

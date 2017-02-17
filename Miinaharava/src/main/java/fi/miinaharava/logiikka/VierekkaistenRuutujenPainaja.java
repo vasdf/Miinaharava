@@ -1,62 +1,53 @@
 package fi.miinaharava.logiikka;
 
 import java.util.ArrayList;
-
-//*ei valmis*
+/**
+ * Luokka painaa ruutuja.
+ * 
+ */
 public class VierekkaistenRuutujenPainaja {
 
-    private VierekkaistenRuutujenEtsija vierekkaistenruutujenetsija;
-    private ArrayList<Painike> painetut;
+    private VierekkaistenRuutujenEtsija etsija;
+    private Ruutu[][] ruudukko;
 
-    public VierekkaistenRuutujenPainaja(VierekkaistenRuutujenEtsija vierekkaistenruutujenetsija) {
-        this.vierekkaistenruutujenetsija = vierekkaistenruutujenetsija;
-        this.painetut = new ArrayList<>();
+    public VierekkaistenRuutujenPainaja(Ruutu[][] ruudukko) {
+        this.ruudukko = ruudukko;
+        this.etsija = new VierekkaistenRuutujenEtsija(ruudukko);
     }
-
-    public void painaVierekkaisiaTyhjiaPainikkeita(ArrayList<Painike> tyhjatpainikkeet) {
-        for (Painike painike2 : tyhjatpainikkeet) {
-
-            painetut.add(painike2);
-            painike2.getPainike().setText("" + painike2.getArvo());
-            painike2.getPainike().setEnabled(false);
-
-            ArrayList<Painike> viereiset = vierekkaistenruutujenetsija.etsiVierekkaisetPainikkeet(painike2);
-            painaPainikkeet(viereiset);
+    
+    /**
+     * Metodi painaa yhtä ruutua ja jos ruudun arvo on 0 
+     * eli ympärillä ei ole yhtään miinaa niin kutsuu
+     * seuraavaa metodia
+     * 
+     * @param ruutu Ruutu, jota halutaan painaa
+     */
+    public void paina(Ruutu ruutu) {
+        ruutu.paina();
+        
+        if (ruutu.getArvo() == 0 && ruutu.onkoMiina() == false) {
+            painaKaikkiaYmparillaOlevia(ruutu);
         }
     }
+    
+    /**
+     * Metodi painaa parametrina saadun ruudun vieressä olevia ruutuja ja jos
+     * painettu ruutu on arvoltaan 0 niin kutsutaan samaa metodia uudestaan
+     * painetulle ruudulle.
+     * 
+     * @param ruutu Ruutu, jonka ympärillä olevat ruudut halutaan painaa
+     */
+    public void painaKaikkiaYmparillaOlevia(Ruutu ruutu) {
+        ArrayList<Ruutu> vierekkaiset = etsija.etsiVierekkaisetRuudut(ruutu);
 
-    public void painaPainikkeet(ArrayList<Painike> painikkeet) {
-
-        for (Painike painike2 : painikkeet) {
-            painetut.add(painike2);
-            painike2.getPainike().setText("" + painike2.getArvo());
-            painike2.getPainike().setEnabled(false);
-        }
-
-        painaVierekkaisiaTyhjiaPainikkeita(poistaPainetutPainikkeet(palautaTyhjatPainikkeet(painikkeet)));
-    }
-
-    public ArrayList<Painike> palautaTyhjatPainikkeet(ArrayList<Painike> painikkeet) {
-        ArrayList<Painike> palautus = new ArrayList<>();
-
-        for (Painike painike2 : painikkeet) {
-            if (painike2.getArvo() == 0) {
-                palautus.add(painike2);
+        for (Ruutu ruutu2 : vierekkaiset) {
+            
+            ruutu2.paina();
+            
+            if (ruutu2.getArvo() == 0) {
+                painaKaikkiaYmparillaOlevia(ruutu2);
             }
+
         }
-
-        return palautus;
-    }
-
-    public ArrayList<Painike> poistaPainetutPainikkeet(ArrayList<Painike> painikkeet) {
-        ArrayList<Painike> palautus = painikkeet;
-
-        for (Painike painike : painikkeet) {
-            if (painetut.contains(painike)) {
-                palautus.remove(painike);
-            }
-        }
-
-        return palautus;
     }
 }

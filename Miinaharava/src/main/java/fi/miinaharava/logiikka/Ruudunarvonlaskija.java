@@ -1,24 +1,25 @@
 package fi.miinaharava.logiikka;
+
 /**
- * Luokka laskee jokaiselle annetun Ruutuja sisältävän taulukon ruudulle 
- * arvon, joka kertoo montakko miinaa on ympärillä.
+ * Luokka laskee jokaiselle Ruutuja sisältävän taulukon ruudulle arvon,
+ * joka kertoo montakko miinaa on ympärillä.
  */
 public class Ruudunarvonlaskija {
 
     private Ruutu[][] ruudukko;
-
-    public Ruudunarvonlaskija(Ruutu[][] ruudukko) {
-        this.ruudukko = ruudukko;
-    }
     
+    public Ruudunarvonlaskija() {
+    }
+
     /**
-     * Metodi laskee parametrina annetun ruuduista koostuvan taulun
-     * jokaiselle ruudulle arvon, joka kertoo montako miinaa on
-     * kyseisen ruudun ympärillä.
+     * Metodi laskee parametrina annetun ruuduista koostuvan taulun jokaiselle
+     * ruudulle arvon, joka kertoo montako miinaa on kyseisen ruudun ympärillä.
+     *
+     * @param ruudukko  Ruudukko, jonka ruuduille arvot halutaan laskea
      * 
-     * @param ruudukko, jolle halutaan asettaa arvot 
+     * @return taulukko, jonka ruuduille arvot on lasekttu
      */
-    public void laskeArvot(Ruutu[][] ruudukko) {
+    public Ruutu[][] laskeArvot(Ruutu[][] ruudukko) {
         this.ruudukko = ruudukko;
 
         for (int y = 0; y < ruudukko.length; y++) {
@@ -26,12 +27,14 @@ public class Ruudunarvonlaskija {
                 laskeArvo(ruudukko[y][x]);
             }
         }
+
+        return ruudukko;
     }
 
     /**
-     * Metodi laskee arvon parametrina annetulle ruudulle.
-     * 
-     * @param ruutu , jolle arvo halutaan laskea
+     * Metodi laskee arvon parametrina annetulle yksittäiselle ruudulle.
+     *
+     * @param ruutu Ruutu, jolle halutaan laskea arvo
      */
     public void laskeArvo(Ruutu ruutu) {
         int arvo = 0;
@@ -43,14 +46,20 @@ public class Ruudunarvonlaskija {
                 }
             }
         }
-
-        ruutu.setArvo(arvo);
+        if (ruutu.onkoMiina() == true) {
+            ruutu.setArvo(-1);
+        } else {
+            ruutu.setArvo(arvo);
+        }
     }
+
     /**
-     * Metodi kertoo ovatko parametrina annetun ruudut lähekkäin.
+     * Metodi kertoo ovatko parametrina annetun ruudut lähekkäin eli
+     * koskevatko ne toisiaan sivuista/kulmista
+     *
+     * @param ruutu1    toinen ruuduista
+     * @param ruutu2    toinen ruuduista
      * 
-     * @param ruutu1 , toinen ruuduista
-     * @param ruutu2 , toinen ruuduista
      * @return boolean ovatko ruudut lahekkain
      */
     public boolean onkoLahekkain(Ruutu ruutu1, Ruutu ruutu2) {
