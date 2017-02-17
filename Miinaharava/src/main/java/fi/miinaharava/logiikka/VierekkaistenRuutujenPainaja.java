@@ -9,7 +9,13 @@ public class VierekkaistenRuutujenPainaja {
 
     private VierekkaistenRuutujenEtsija etsija;
     private Ruutu[][] ruudukko;
-
+    
+    /**
+     * Konstruktori luo olion ja ottaa muistiin annetun taulukon
+     * sekä luo etsijän.
+     * 
+     * @param ruudukko  Kentän antama taulukko, jonka Ruutu olioita käsitellään
+     */
     public VierekkaistenRuutujenPainaja(Ruutu[][] ruudukko) {
         this.ruudukko = ruudukko;
         this.etsija = new VierekkaistenRuutujenEtsija(ruudukko);
@@ -18,7 +24,7 @@ public class VierekkaistenRuutujenPainaja {
     /**
      * Metodi painaa yhtä ruutua ja jos ruudun arvo on 0 
      * eli ympärillä ei ole yhtään miinaa niin kutsuu
-     * seuraavaa metodia
+     * seuraavaa metodia.
      * 
      * @param ruutu Ruutu, jota halutaan painaa
      */

@@ -1,10 +1,7 @@
 package fi.miinaharava.logiikka;
 
 import javax.swing.JButton;
-import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -36,6 +33,8 @@ public class VierekkaistenRuutujenPainajaTest {
     
     @Test
     public void paina() {
+        ruudukko[4][5].setArvo(3);
+        
         painaja.paina(ruudukko[4][5]);
         
         assertFalse(ruudukko[4][5].getPainike().isEnabled());
@@ -64,7 +63,7 @@ public class VierekkaistenRuutujenPainajaTest {
         ruudukko[5][3].setArvo(3);
         ruudukko[4][3].setArvo(3);
         
-        painaja.painaKaikkiaYmparillaOlevia(ruudukko[5][5]);
+        painaja.paina(ruudukko[5][5]);
         
         assertFalse(ruudukko[4][4].getPainike().isEnabled());
         assertFalse(ruudukko[4][5].getPainike().isEnabled());

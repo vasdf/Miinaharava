@@ -4,7 +4,7 @@ import javax.swing.JButton;
 
 /**
  * Luokkaa tarvitaan pelikentän, eli taulun, joka
- * koostuu Ruutu olioista, luomiseen
+ * koostuu Ruutu olioista, luomiseen.
  */
 public class Ruutu {
     
@@ -13,7 +13,12 @@ public class Ruutu {
     private int y;
     private int arvo;
     private boolean miina;
-
+    /**
+     * Konstruktori luo Ruutu olion halutuilla arvoilla.
+     * 
+     * @param x Kentän kertoma x-koordinaatti
+     * @param y Kentän kertoma y-koordinaatti
+     */
     public Ruutu(int x, int y) {
         this.x = x;
         this.y = y;
@@ -50,7 +55,11 @@ public class Ruutu {
         arvo = -1;
         miina = true;
     }
-
+    /**
+     * Metodi kertoo onko kyseessä miina vai ei.
+     * 
+     * @return boolean onko miina
+     */
     public boolean onkoMiina() {
         return miina;
     }

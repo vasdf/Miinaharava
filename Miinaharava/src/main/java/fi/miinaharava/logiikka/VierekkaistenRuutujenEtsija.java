@@ -3,12 +3,17 @@ package fi.miinaharava.logiikka;
 import java.util.ArrayList;
 
 /**
- * Luokka auttaa Ruuduista koostuvan taulukon läpikäymisessä
+ * Luokka auttaa Ruuduista koostuvan taulukon läpikäymisessä.
  */
 public class VierekkaistenRuutujenEtsija {
 
     private Ruutu[][] ruudukko;
-
+    
+    /**
+     * Konstruktori luo olion.
+     * 
+     * @param ruudukko Ruudukko, josta ruutuja halutaan etsiä
+     */
     public VierekkaistenRuutujenEtsija(Ruutu[][] ruudukko) {
         this.ruudukko = ruudukko;
     }
@@ -39,10 +44,10 @@ public class VierekkaistenRuutujenEtsija {
     
     /**
      * Metodi kertoo ovatko ruudut 1 ja 2 vierekkäin
-     * eli koskevatko niiden reunat/kulmat
+     * eli koskevatko niiden reunat/kulmat.
      * 
-     * @param ruutu1
-     * @param ruutu2
+     * @param ruutu1    Toinen verrattavista ruuduista
+     * @param ruutu2    Toinen verrattavista ruuduista
      * 
      * @return boolean onko ruuduit vierekkäin
      */

@@ -12,7 +12,13 @@ public class Miinojenluoja {
     private int miinojenmaara;
     private Random random;
     private Ruutu[][] ruudukko;
-
+    /**
+     * Konstruktorissa kerrotaan miinojenluojalle tarvitut arvot.
+     * 
+     * @param sivunpituus   Kentän antama sivunpituus
+     * 
+     * @param miinojenmaara Kentän antama miinojenmäärä
+     */
     public Miinojenluoja(int sivunpituus, int miinojenmaara) {
         this.sivunpituus = sivunpituus;
         this.miinojenmaara = miinojenmaara;;

@@ -8,6 +8,9 @@ public class Ruudunarvonlaskija {
 
     private Ruutu[][] ruudukko;
     
+    /**
+     * Konstruktori luo luokan.
+     */
     public Ruudunarvonlaskija() {
     }
 
@@ -55,7 +58,7 @@ public class Ruudunarvonlaskija {
 
     /**
      * Metodi kertoo ovatko parametrina annetun ruudut lähekkäin eli
-     * koskevatko ne toisiaan sivuista/kulmista
+     * koskevatko ne toisiaan sivuista/kulmista.
      *
      * @param ruutu1    toinen ruuduista
      * @param ruutu2    toinen ruuduista

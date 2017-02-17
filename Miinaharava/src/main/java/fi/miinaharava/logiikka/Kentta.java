@@ -4,7 +4,7 @@ import java.awt.Insets;
 import javax.swing.JButton;
 
 /**
- * Luokka luo Ruutu olioista koostuvan taulun eli pelikentän
+ * Luokka luo Ruutu olioista koostuvan taulun eli pelikentän.
  */
 public class Kentta {
 
@@ -13,7 +13,15 @@ public class Kentta {
     private int miinojenmaara;
     private Miinojenluoja miinojenluoja;
     private Ruudunarvonlaskija ruudunarvonlaskija;
-
+    private VierekkaistenRuutujenPainaja painaja;
+    /**
+     * Konstruktorissa luodaan halutun lainen Ruuduista koostuva
+     * taulukko, joka toimii kenttänä.
+     * 
+     * @param sivunpituus   Käyttäjän haluama sivunpituus
+     * 
+     * @param miinojenmaara Käyttäjän haluama miinojenmäärä
+     */
     public Kentta(int sivunpituus, int miinojenmaara) {
         this.sivunpituus = sivunpituus;
         this.miinojenmaara = miinojenmaara;
@@ -26,10 +34,12 @@ public class Kentta {
 
         ruudunarvonlaskija = new Ruudunarvonlaskija();
         ruudukko = ruudunarvonlaskija.laskeArvot(ruudukko);
+        
+        painaja = new VierekkaistenRuutujenPainaja(ruudukko);
     }
     
     /**
-     * Metodi luo Ruutu olioita sisältävään taulukkoon Ruutu olioit
+     * Metodi luo Ruutu olioille tehtyyn taulukkoon Ruutu olioit.
      */
     private void luoKentta() {
         for (int y = 0; y < sivunpituus; y++) {
@@ -45,9 +55,13 @@ public class Kentta {
             }
         }
     }
-
-    public Ruutu getRuutu(int x, int y) {
-        return ruudukko[y][x];
+    /**
+     * Metodi kutsuu VierekkaisteRuutujenPainajan metodia paina.
+     * 
+     * @param ruutu TapahtumaKuuntelijalta saatu Ruutu, jota painettiin
+     */
+    public void paina(Ruutu ruutu) {
+        painaja.paina(ruutu);
     }
 
     public Ruutu[][] getKentta() {
