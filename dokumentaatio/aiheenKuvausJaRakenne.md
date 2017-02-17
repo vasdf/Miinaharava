@@ -3,9 +3,13 @@
 **Käyttäjät:** Pelaaja
 
 **Käyttäjien toiminnot:**
-- miinojen paljastaminen ruuduista
+- ruutujen paljastaminen
 - lippujen lisääminen paljastamattomiin ruutuihin
 - mahdollisesti kysymys merkkien lisääminen paljastamattomiin ruutuihin
+- voi vaihtaa kentän kokoa/miinojen määrää ja aloittaa uuden pelin
 
-
+**Kaavioita**
 ![Määrittelyvaiheen luokkakaavio](miinaharavaluokkakaavio3.0.png)
+Tällä hetkellä ei ole muita käyttötapauksia(tulee lisää)
+![Sekvenssikaavio](miinaharavasekvenssikaavio1.png)
+
