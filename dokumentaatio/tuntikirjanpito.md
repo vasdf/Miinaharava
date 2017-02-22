@@ -12,3 +12,5 @@ Päivä | Tunnit | Kuvaus
 10.02.2017 | 2h | Javadoc
 16.02.2017 | 4h | Logiikan ja käyttöliittymän parantelua
 17.02.2017 | 7h | Testejä, logiikan parantelua, dl5 juttuja
+21.02.2017 | 2h | Uudenpelin aloittaminen
+22.02.2017 | 2h | Koodia

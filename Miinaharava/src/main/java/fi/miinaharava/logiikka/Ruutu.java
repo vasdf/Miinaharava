@@ -1,5 +1,7 @@
 package fi.miinaharava.logiikka;
 
+import java.awt.Font;
+import java.awt.Insets;
 import javax.swing.JButton;
 
 /**
@@ -40,7 +42,9 @@ public class Ruutu {
      */
     public void paina() {
         if (miina == true) {
-            painike.setText("-1");
+            painike.setText("*");
+            painike.setFont(new Font("", Font.PLAIN, 30));
+            painike.setMargin(new Insets(12, 0, 0, 0));
         } else {
             painike.setText("" + arvo);
         }

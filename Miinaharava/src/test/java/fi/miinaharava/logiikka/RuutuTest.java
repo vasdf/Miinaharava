@@ -64,7 +64,7 @@ public class RuutuTest {
         ruutu.asetaMiina();
         ruutu.paina();
         
-        assertEquals("-1", painike.getText());
+        assertEquals("*", painike.getText());
         assertFalse(painike.isEnabled());
     }
 }

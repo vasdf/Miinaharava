@@ -1,17 +1,19 @@
-
 package fi.miinaharava.main;
 
-import fi.miinaharava.kayttoliittyma.Kayttoliittyma;
 import fi.miinaharava.logiikka.Kentta;
+import fi.miinaharava.logiikka.Pelinhallinta;
 
 public class Main {
 
     public static void main(String[] args) {
-        Kentta kentta = new Kentta(10, 15);
         
-        Kayttoliittyma k = new Kayttoliittyma(kentta);
+        Kentta kentta = new Kentta(20, 20);
         
-        k.run();
+        Pelinhallinta ph = new Pelinhallinta(kentta);
+        
+        kentta.setPelinHallinta(ph);
+        
+        ph.aloitaPeli();
     }
-    
+
 }
