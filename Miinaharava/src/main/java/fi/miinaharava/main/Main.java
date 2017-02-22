@@ -7,7 +7,7 @@ public class Main {
 
     public static void main(String[] args) {
         
-        Kentta kentta = new Kentta(20, 20);
+        Kentta kentta = new Kentta(16, 35);
         
         Pelinhallinta ph = new Pelinhallinta(kentta);
         

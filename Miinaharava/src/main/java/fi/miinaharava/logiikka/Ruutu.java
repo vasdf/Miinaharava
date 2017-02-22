@@ -6,19 +6,20 @@ import java.awt.Insets;
 import javax.swing.JButton;
 
 /**
- * Luokkaa tarvitaan pelikentän, eli taulun, joka
- * koostuu Ruutu olioista, luomiseen.
+ * Luokkaa tarvitaan pelikentän, eli taulun, joka koostuu Ruutu olioista,
+ * luomiseen.
  */
 public class Ruutu {
-    
+
     private JButton painike;
     private int x;
     private int y;
     private int arvo;
     private boolean miina;
+
     /**
      * Konstruktori luo Ruutu olion halutuilla arvoilla.
-     * 
+     *
      * @param x Kentän kertoma x-koordinaatti
      * @param y Kentän kertoma y-koordinaatti
      */
@@ -26,20 +27,20 @@ public class Ruutu {
         this.x = x;
         this.y = y;
         this.arvo = 0;
-        this.miina = false;     
+        this.miina = false;
     }
 
     public JButton getPainike() {
         return painike;
     }
-    
+
     public void setPainike(JButton painike) {
         this.painike = painike;
     }
-    
+
     /**
-     * Metodi asettaa JButton painikkeen tekstin halutuksi riippuen onko kyseessä
-     * miina vai ei ja poistaa sen käytöstä. 
+     * Metodi asettaa JButton painikkeen tekstin halutuksi riippuen onko
+     * kyseessä miina vai ei ja poistaa sen käytöstä.
      */
     public void paina() {
         if (miina == true) {
@@ -47,23 +48,29 @@ public class Ruutu {
             painike.setFont(new Font("", Font.PLAIN, 30));
             painike.setMargin(new Insets(12, 0, 0, 0));
             painike.setBackground(Color.red);
+        } else if (arvo == 0) {
+            painike.setText(" ");
         } else {
+            painike.setForeground(Color.red);
+            painike.setOpaque(true);
             painike.setText("" + arvo);
         }
-        
+
         painike.setEnabled(false);
     }
+
     /**
-     * Metodi asettaa boolean muuttuja miina todeksi. Muuttujan avulla
-     * tiedetään onko kyseinen ruutu miina vai ei.
+     * Metodi asettaa boolean muuttuja miina todeksi. Muuttujan avulla tiedetään
+     * onko kyseinen ruutu miina vai ei.
      */
     public void asetaMiina() {
         arvo = -1;
         miina = true;
     }
+
     /**
      * Metodi kertoo onko kyseessä miina vai ei.
-     * 
+     *
      * @return boolean onko miina
      */
     public boolean onkoMiina() {
@@ -77,7 +84,7 @@ public class Ruutu {
     public int getArvo() {
         return arvo;
     }
-       
+
     public int getX() {
         return x;
     }
