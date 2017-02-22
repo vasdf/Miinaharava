@@ -1,6 +1,5 @@
 package fi.miinaharava.logiikka;
 
-import java.awt.Color;
 import java.awt.Font;
 import java.awt.Insets;
 import javax.swing.JButton;
@@ -9,8 +8,7 @@ import javax.swing.JButton;
  * Luokka luo Ruutu olioista koostuvan taulun eli pelikentän.
  */
 public class Kentta {
-    
-    private Pelinhallinta pelinhallinta;
+
     private Ruutu[][] ruudukko;
     private int sivunpituus;
     private int miinojenmaara;
@@ -34,14 +32,6 @@ public class Kentta {
         luoKentta();
     }
     
-    public void setPelinHallinta(Pelinhallinta pelinhallinta) {
-        this.pelinhallinta = pelinhallinta;
-    }
-    
-    public Pelinhallinta getPelinHallinta() {
-        return pelinhallinta;
-    }
-
     /**
      * Metodi luo Ruutu olioille tehtyyn taulukkoon Ruutu olioit.
      */
@@ -81,7 +71,11 @@ public class Kentta {
     public Ruutu[][] getKentta() {
         return ruudukko;
     }
-
+    
+    /**
+     * Metodi on testejä varten
+     * @return 
+     */
     public Miinojenluoja getMiinojenluoja() {
         return miinojenluoja;
     }

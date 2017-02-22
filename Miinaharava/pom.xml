@@ -49,10 +49,20 @@
     		<version>1.1.8</version>
     		<configuration>
         		<targetClasses>
-            		<param>fi.miinaharava.logiikka.*</param>
+            		<param>fi.miinaharava.logiikka.Kentta</param>
+                        <param>fi.miinaharava.logiikka.Miinojenluoja</param>
+                        <param>fi.miinaharava.logiikka.Ruudunarvonlaskija</param>
+                        <param>fi.miinaharava.logiikka.Ruutu</param>
+                        <param>fi.miinaharava.logiikka.VierekkaistenRuutujenEtsija</param>
+                        <param>fi.miinaharava.logiikka.VierekkaistenRuutujenPainaja</param>
         		</targetClasses>
         		<targetTests>
-            		<param>fi.miinaharava.logiikka.*</param>
+            		<param>fi.miinaharava.logiikka.KenttaTest</param>
+                        <param>fi.miinaharava.logiikka.MiinojenluojaTest</param>
+                        <param>fi.miinaharava.logiikka.RuudunarvonlaskijaTest</param>
+                        <param>fi.miinaharava.logiikka.RuutuTest</param>
+                        <param>fi.miinaharava.logiikka.VierekkaistenRuutujenEtsijaTest</param>
+                        <param>fi.miinaharava.logiikka.VierekkaistenRuutujenPainajaTest</param>
         		</targetTests>
     		</configuration>
 		</plugin>

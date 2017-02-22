@@ -11,8 +11,6 @@ public class Main {
         
         Pelinhallinta ph = new Pelinhallinta(kentta);
         
-        kentta.setPelinHallinta(ph);
-        
         ph.aloitaPeli();
     }
 

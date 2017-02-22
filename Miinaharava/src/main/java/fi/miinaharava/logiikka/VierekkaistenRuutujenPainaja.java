@@ -2,7 +2,7 @@ package fi.miinaharava.logiikka;
 
 import java.util.ArrayList;
 /**
- * Luokka painaa ruutuja.
+ * Luokka hallinnoi ruutujen painamista.
  * 
  */
 public class VierekkaistenRuutujenPainaja {
