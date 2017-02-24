@@ -6,7 +6,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class RuudunarvonlaskijaTest {
-    private Ruudunarvonlaskija laskija;
+    private RuudunArvonlaskija laskija;
     private Ruutu[][] ruudukko;
     
     public RuudunarvonlaskijaTest() {
@@ -28,7 +28,7 @@ public class RuudunarvonlaskijaTest {
         ruudukko[0][0].asetaMiina();
         ruudukko[9][6].asetaMiina();
         
-        this.laskija = new Ruudunarvonlaskija();
+        this.laskija = new RuudunArvonlaskija();
         this.laskija.laskeArvot(ruudukko);
         
     }

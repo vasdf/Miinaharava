@@ -5,9 +5,9 @@ import java.util.ArrayList;
  * Luokka hallinnoi ruutujen painamista.
  * 
  */
-public class VierekkaistenRuutujenPainaja {
+public class RuutujenPainaja {
 
-    private VierekkaistenRuutujenEtsija etsija;
+    private RuutujenEtsija etsija;
     private Ruutu[][] ruudukko;
     
     /**
@@ -16,9 +16,9 @@ public class VierekkaistenRuutujenPainaja {
      * 
      * @param ruudukko  Kentän antama taulukko, jonka Ruutu olioita käsitellään
      */
-    public VierekkaistenRuutujenPainaja(Ruutu[][] ruudukko) {
+    public RuutujenPainaja(Ruutu[][] ruudukko) {
         this.ruudukko = ruudukko;
-        this.etsija = new VierekkaistenRuutujenEtsija(ruudukko);
+        this.etsija = new RuutujenEtsija(ruudukko);
     }
     
     /**

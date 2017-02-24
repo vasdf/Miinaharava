@@ -4,14 +4,14 @@ package fi.miinaharava.logiikka;
  * Luokka laskee jokaiselle Ruutuja sisältävän taulukon ruudulle arvon,
  * joka kertoo montakko miinaa on ympärillä.
  */
-public class Ruudunarvonlaskija {
+public class RuudunArvonlaskija {
 
     private Ruutu[][] ruudukko;
     
     /**
      * Konstruktori luo luokan.
      */
-    public Ruudunarvonlaskija() {
+    public RuudunArvonlaskija() {
     }
 
     /**

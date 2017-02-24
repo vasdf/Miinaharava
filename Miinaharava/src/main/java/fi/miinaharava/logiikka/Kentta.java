@@ -13,8 +13,8 @@ public class Kentta {
     private int sivunpituus;
     private int miinojenmaara;
     private Miinojenluoja miinojenluoja;
-    private Ruudunarvonlaskija ruudunarvonlaskija;
-    private VierekkaistenRuutujenPainaja painaja;
+    private RuudunArvonlaskija ruudunarvonlaskija;
+    private RuutujenPainaja painaja;
 
     /**
      * Konstruktorissa luodaan halutun lainen Ruuduista koostuva taulukko, joka
@@ -29,20 +29,18 @@ public class Kentta {
         this.miinojenmaara = miinojenmaara;
         this.ruudukko = new Ruutu[sivunpituus][sivunpituus];
 
-        luoKentta();
+        luoPelialusta();
     }
     
     /**
      * Metodi luo Ruutu olioille tehtyyn taulukkoon Ruutu olioit.
      */
-    private void luoKentta() {
+    private void luoPelialusta() {
         for (int y = 0; y < sivunpituus; y++) {
             for (int x = 0; x < sivunpituus; x++) {
                 Ruutu ruutu = new Ruutu(x, y);
 
                 JButton painike = new JButton();
-                painike.setMargin(new Insets(0, 0, 0, 0));
-                painike.setFont(new Font("", Font.PLAIN, 20));
                 
                 ruutu.setPainike(painike);
 
@@ -53,10 +51,10 @@ public class Kentta {
         miinojenluoja = new Miinojenluoja(sivunpituus, miinojenmaara);
         ruudukko = miinojenluoja.luoMiinatSatunnaisesti(ruudukko);
 
-        ruudunarvonlaskija = new Ruudunarvonlaskija();
+        ruudunarvonlaskija = new RuudunArvonlaskija();
         ruudukko = ruudunarvonlaskija.laskeArvot(ruudukko);
 
-        painaja = new VierekkaistenRuutujenPainaja(ruudukko);
+        painaja = new RuutujenPainaja(ruudukko);
     }
 
     /**
@@ -73,8 +71,9 @@ public class Kentta {
     }
     
     /**
-     * Metodi on testejä varten
-     * @return 
+     * Metodi on testejä varten.
+     * 
+     * @return palauttaa miinojeluojaolion
      */
     public Miinojenluoja getMiinojenluoja() {
         return miinojenluoja;

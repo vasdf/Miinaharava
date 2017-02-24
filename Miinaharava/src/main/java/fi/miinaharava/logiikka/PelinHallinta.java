@@ -5,9 +5,8 @@ import fi.miinaharava.kayttoliittyma.Kayttoliittyma;
 /**
  * Luokan avulla aloitetaan uusipeli.
  *
- * @author vavo
  */
-public class Pelinhallinta {
+public class PelinHallinta {
 
     private static Kentta kentta;
     private static Kayttoliittyma kayttoliittyma;
@@ -17,7 +16,7 @@ public class Pelinhallinta {
      *
      * @param kentta Kenttä millä aloitetaan
      */
-    public Pelinhallinta(Kentta kentta) {
+    public PelinHallinta(Kentta kentta) {
         this.kentta = kentta;
     }
 
@@ -31,7 +30,7 @@ public class Pelinhallinta {
     }
 
     /**
-     * Metodi aloittaa uudenpelin tietyillä arvoilla.'
+     * Metodi aloittaa uudenpelin tietyillä arvoilla.
      * 
      * @param sivunpituus   Käyttäjän haluama sivunpituus
      * @param miinojenmaara Käyttäjän haluama miinojen määrä

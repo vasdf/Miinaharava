@@ -1,7 +1,7 @@
 package fi.miinaharava.main;
 
 import fi.miinaharava.logiikka.Kentta;
-import fi.miinaharava.logiikka.Pelinhallinta;
+import fi.miinaharava.logiikka.PelinHallinta;
 
 public class Main {
 
@@ -9,7 +9,7 @@ public class Main {
         
         Kentta kentta = new Kentta(16, 35);
         
-        Pelinhallinta ph = new Pelinhallinta(kentta);
+        PelinHallinta ph = new PelinHallinta(kentta);
         
         ph.aloitaPeli();
     }

@@ -8,7 +8,7 @@ import static org.junit.Assert.*;
 
 public class VierekkaistenRuutujenEtsijaTest {
 
-    private VierekkaistenRuutujenEtsija etsija;
+    private RuutujenEtsija etsija;
     private Ruutu[][] ruudukko;
 
     public VierekkaistenRuutujenEtsijaTest() {
@@ -30,7 +30,7 @@ public class VierekkaistenRuutujenEtsijaTest {
             }
         }
 
-        etsija = new VierekkaistenRuutujenEtsija(ruudukko);
+        etsija = new RuutujenEtsija(ruudukko);
     }
 
     @Test

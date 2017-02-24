@@ -14,6 +14,10 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
+/**
+ * Luokka luo kayttoliittyman.
+ *
+ */
 public class Kayttoliittyma implements Runnable {
 
     private JFrame frame;
@@ -22,6 +26,11 @@ public class Kayttoliittyma implements Runnable {
     private int sivunpituus;
     private Container c;
 
+    /**
+     * Konstruktorissa luodaa olio.
+     *
+     * @param kentta Kentta, jota vastaava kayttoliittyma halutaan luoda
+     */
     public Kayttoliittyma(Kentta kentta) {
         this.kentta = kentta;
         this.ruudukko = kentta.getKentta();
@@ -37,14 +46,20 @@ public class Kayttoliittyma implements Runnable {
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         c = luoKomponentit(c);
-        
+
         frame.setContentPane(c);
-        
+
         frame.pack();
         frame.setVisible(true);
-        
+
     }
 
+    /**
+     * Metodi luo tarvittavat komponentit
+     * 
+     * @param container JFramen container
+     * @return  palauttaa muunnetun containerin
+     */
     private Container luoKomponentit(Container container) {
 
         container.setLayout(new BorderLayout(0, 0));
@@ -60,48 +75,52 @@ public class Kayttoliittyma implements Runnable {
                 kenttapaneli.add(ruudukko[y][x].getPainike());
             }
         }
-        
-        container.add(kenttapaneli,BorderLayout.CENTER); 
-        
+
+        container.add(kenttapaneli, BorderLayout.CENTER);
+
         JPanel asetukset = new JPanel(new FlowLayout());
-        
+
         JLabel sivunpituusteksti = new JLabel("Sivunpituus:");
         asetukset.add(sivunpituusteksti);
-        
-        JTextField koko = new JTextField("",3);
+
+        JTextField koko = new JTextField("", 3);
         asetukset.add(koko);
-        
+
         JLabel miinojenmaarateksti = new JLabel("Miinojen määrä:");
         asetukset.add(miinojenmaarateksti);
-        
-        JTextField miinoja = new JTextField("",3);
+
+        JTextField miinoja = new JTextField("", 3);
         asetukset.add(miinoja);
-        
+
         JButton uudelleenaloitus = new JButton("Uusi peli");
-        
+
         UusiPeliPainikkeenKuuntelija kuuntelija2 = new UusiPeliPainikkeenKuuntelija(koko, miinoja);
         uudelleenaloitus.addActionListener(kuuntelija2);
-        
+
         asetukset.add(uudelleenaloitus);
-        
+
         container.add(asetukset, BorderLayout.SOUTH);
-        
+
         return container;
     }
-    
+    /**
+     * Metodia tarvitaan uudenpelin luomisessa.
+     * 
+     * @param kentta Uusikentta, jota vastaava kayttoliittyma halutaan luoda
+     */
     public void uusiPeli(Kentta kentta) {
         this.kentta = kentta;
         this.ruudukko = kentta.getKentta();
         this.sivunpituus = ruudukko.length;
-        
+
         c.removeAll();
-        
+
         c = luoKomponentit(c);
-        
+
         frame.setContentPane(c);
-        
+
         frame.revalidate();
-        
+
     }
 
 }

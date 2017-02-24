@@ -6,7 +6,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class VierekkaistenRuutujenPainajaTest {
-    private VierekkaistenRuutujenPainaja painaja;
+    private RuutujenPainaja painaja;
     private Ruutu[][] ruudukko;
     
     public VierekkaistenRuutujenPainajaTest() {
@@ -28,7 +28,7 @@ public class VierekkaistenRuutujenPainajaTest {
             }
         }
         
-        painaja = new VierekkaistenRuutujenPainaja(ruudukko);
+        painaja = new RuutujenPainaja(ruudukko);
     }
     
     @Test

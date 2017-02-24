@@ -1,5 +1,8 @@
 package fi.miinaharava.logiikka;
 
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Insets;
 import javax.swing.JButton;
 import org.junit.Before;
 import org.junit.Test;
@@ -51,20 +54,33 @@ public class RuutuTest {
     }
     
     @Test
-    public void painikkeenPainaminenToimii() {
+    public void arvollinenPainikeToimiiOikein() {
         ruutu.setArvo(4);
         ruutu.paina();
         
         assertEquals("4", painike.getText());
         assertFalse(painike.isEnabled());
+        assertEquals(new Font("", Font.PLAIN, 20), painike.getFont());
+        assertEquals(new Insets(0, 0, 0, 0), painike.getMargin());
     }
     
     @Test
-    public void painikkeenPainaminenToimiiJosMiina() {
+    public void miinaPainikeToimiiOikein() {
         ruutu.asetaMiina();
         ruutu.paina();
         
         assertEquals("*", painike.getText());
         assertFalse(painike.isEnabled());
+        assertEquals(Color.red, painike.getBackground());
+        assertEquals(new Font("", Font.PLAIN, 30), painike.getFont());
+        assertEquals(new Insets(12, 0, 0, 0), painike.getMargin());
+    }
+    
+    @Test
+    public void tyhjanRuudunArvoOikein() {
+        ruutu.setArvo(0);
+        ruutu.paina();
+        painike.setText(painike.getText() + "a");
+        assertEquals("a", painike.getText());  
     }
 }

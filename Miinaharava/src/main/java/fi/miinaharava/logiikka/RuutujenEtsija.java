@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /**
  * Luokka auttaa Ruuduista koostuvan taulukon läpikäymisessä.
  */
-public class VierekkaistenRuutujenEtsija {
+public class RuutujenEtsija {
 
     private Ruutu[][] ruudukko;
     
@@ -14,7 +14,7 @@ public class VierekkaistenRuutujenEtsija {
      * 
      * @param ruudukko Ruudukko, josta ruutuja halutaan etsiä
      */
-    public VierekkaistenRuutujenEtsija(Ruutu[][] ruudukko) {
+    public RuutujenEtsija(Ruutu[][] ruudukko) {
         this.ruudukko = ruudukko;
     }
     

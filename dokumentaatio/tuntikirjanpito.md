@@ -14,3 +14,5 @@ Päivä | Tunnit | Kuvaus
 17.02.2017 | 7h | Testejä, logiikan parantelua, dl5 juttuja
 21.02.2017 | 4h | Uudenpelin aloittamisen mahdollistaminen
 22.02.2017 | 3h | Koodia
+23.02.2017 | 2h | Demotilaisuuteen koodin valmistamista
+24.02.2017 | 2h | javadoc ja dl6

@@ -4,15 +4,22 @@
 
 **Käyttäjien toiminnot:**
 - ruutujen paljastaminen
-- lippujen lisääminen paljastamattomiin ruutuihin
-- mahdollisesti kysymys merkkien lisääminen paljastamattomiin ruutuihin
 - voi vaihtaa kentän kokoa/miinojen määrää ja aloittaa uuden pelin
+
+**Käyttöohjeet**
+Paina ruutuja ja yritä olla osumatta miinoihin. Uudenpelin voi aloittaa syöttämällä tekstikenttiin haluamasi arvot, maksimi sivunpituus on 50.
+
+**Ohjelmanrakenteen kuvaus**
+PelinHallinta luokka on vastuussa pelin alustamisessa ja uuden pelin aloittamisessa.
+
+Luokka Kentta luo tyhjän pelialustan (ei miinoja). Pelialusta on Ruutu olioista koostuva array Ruutu[][]. Jokaisella Ruutu oliolla on oma JButton, joka mahdollistaa ruutujen painamisen. Kentan luomisessa käytetään apuna luokkia RuudunArvonlaskija ja Miinojenluoja.
+
+RuutujenPainaja luokkaa kutsutaan kun TapahtumaKuuntelija, joka liittyy JButtoneihin, huomaa painikkeen painalluksen. RuutujenPainaja ja RuutujenEtsijä hoitavat logiikan miten pelialustan ruutuja paljastetaan.
 
 **Kaavioita:**
 
-![Määrittelyvaiheen luokkakaavio](miinaharavaluokkakaavio3.0.png)
-
-Tällä hetkellä ei ole muita toimivia käyttötapauksia(tulee lisää)
+![Luokkakaavio](luokkakaavio4.0.png)
 
 ![Sekvenssikaavio](miinaharavasekvenssikaavio1.png)
+![Sekvenssikaavio](sekvenssikaavio2.png)
 

@@ -25,7 +25,7 @@ under the License.
     <language>en-us</language>
     <copyright>&#169;2017</copyright>
     <item>
-      <title>File: 9,
+      <title>File: 11,
              Errors: 0,
              Warnings: 0,
              Infos: 0
@@ -47,6 +47,34 @@ under the License.
                           <tr>
                 <td>
                   <a href="${project.url}/checkstyle.html#fi.miinaharava.logiikka.Miinojenluoja.java">fi/miinaharava/logiikka/Miinojenluoja.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fi.miinaharava.logiikka.RuutujenPainaja.java">fi/miinaharava/logiikka/RuutujenPainaja.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fi.miinaharava.logiikka.PelinHallinta.java">fi/miinaharava/logiikka/PelinHallinta.java</a>
                 </td>
                 <td>
                   0
@@ -88,20 +116,6 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#fi.miinaharava.logiikka.VierekkaistenRuutujenEtsija.java">fi/miinaharava/logiikka/VierekkaistenRuutujenEtsija.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="${project.url}/checkstyle.html#fi.miinaharava.kayttoliittyma.Kayttoliittyma.java">fi/miinaharava/kayttoliittyma/Kayttoliittyma.java</a>
                 </td>
                 <td>
@@ -116,7 +130,21 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#fi.miinaharava.logiikka.VierekkaistenRuutujenPainaja.java">fi/miinaharava/logiikka/VierekkaistenRuutujenPainaja.java</a>
+                  <a href="${project.url}/checkstyle.html#fi.miinaharava.logiikka.RuudunArvonlaskija.java">fi/miinaharava/logiikka/RuudunArvonlaskija.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fi.miinaharava.logiikka.RuutujenEtsija.java">fi/miinaharava/logiikka/RuutujenEtsija.java</a>
                 </td>
                 <td>
                   0
@@ -144,7 +172,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#fi.miinaharava.logiikka.Ruudunarvonlaskija.java">fi/miinaharava/logiikka/Ruudunarvonlaskija.java</a>
+                  <a href="${project.url}/checkstyle.html#fi.miinaharava.kayttoliittyma.UusiPeliPainikkeenKuuntelija.java">fi/miinaharava/kayttoliittyma/UusiPeliPainikkeenKuuntelija.java</a>
                 </td>
                 <td>
                   0
