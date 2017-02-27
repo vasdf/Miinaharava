@@ -31,8 +31,18 @@ public class RuutujenPainaja {
     public void paina(Ruutu ruutu) {
         ruutu.paina();
         
-        if (ruutu.getArvo() == 0 && ruutu.onkoMiina() == false) {
+        if (ruutu.onkoMiina()) {
+            painaKaikkia();
+            PelinHallinta.havisit();
+        }
+        
+        if (ruutu.getArvo() == 0) {
             painaKaikkiaYmparillaOlevia(ruutu);
+        }
+        
+        if (onkoKaikkiaEiMiinojaPainettu()) {
+            painaKaikkia();
+            PelinHallinta.voitit();
         }
     }
     
@@ -55,5 +65,34 @@ public class RuutujenPainaja {
             }
 
         }
+    }
+    /**
+     * Metodi paljastaa peli kentän pelaaja osuessa miinaan.
+     */
+    public void painaKaikkia() {
+        for (int y = 0; y < ruudukko.length; y++) {
+            for (int x = 0; x < ruudukko.length; x++) {
+                ruudukko[y][x].paina();
+            }
+        }
+    }
+    /**
+     * Metodi tarkistaa onko kaikkia ei miinoja painettu.
+     * Tarvitaan pelin voittamisen varmistamisessa
+     * 
+     * @return boolean onko peli voitettu
+     */
+    public boolean onkoKaikkiaEiMiinojaPainettu() {
+        for (int y = 0; y < ruudukko.length; y++) {
+            for (int x = 0; x < ruudukko.length; x++) {
+                if (ruudukko[y][x].onkoMiina() == false) {
+                    if (ruudukko[y][x].getPainike().isEnabled() == true) {
+                        return false;
+                    }
+                }
+            }
+        }
+        
+        return true;
     }
 }

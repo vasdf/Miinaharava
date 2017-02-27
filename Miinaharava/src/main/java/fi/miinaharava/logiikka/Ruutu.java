@@ -42,7 +42,7 @@ public class Ruutu {
      * Metodi asettaa JButton painikkeen tekstin halutuksi riippuen onko
      * kyseessä miina vai ei ja poistaa sen käytöstä.
      */
-    public void paina() {
+    public void paina() {       
         if (miina == true) {
             painike.setText("*");
             painike.setFont(new Font("", Font.PLAIN, 30));

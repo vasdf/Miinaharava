@@ -5,6 +5,7 @@ import fi.miinaharava.kayttoliittyma.Kayttoliittyma;
 /**
  * Luokan avulla aloitetaan uusipeli.
  *
+ * (Luokalle ei ole testejä, koska luokka ei tee mitään erikoista)
  */
 public class PelinHallinta {
 
@@ -31,13 +32,35 @@ public class PelinHallinta {
 
     /**
      * Metodi aloittaa uudenpelin tietyillä arvoilla.
-     * 
-     * @param sivunpituus   Käyttäjän haluama sivunpituus
+     *
+     * @param sivunpituus Käyttäjän haluama sivunpituus
      * @param miinojenmaara Käyttäjän haluama miinojen määrä
      */
     public static void uusiPeli(int sivunpituus, int miinojenmaara) {
         kentta = new Kentta(sivunpituus, miinojenmaara);
 
         kayttoliittyma.uusiPeli(kentta);
+    }
+
+    /**
+     * Metodi kertoo kayttoliittymalle häviöstä.
+     * 
+     * null tarkistus on RuutujenPainajaTest luokkaa varten
+     */
+    public static void havisit() {
+        if (kayttoliittyma != null) {
+            kayttoliittyma.havisit();
+        }
+    }
+
+    /**
+     * Metodi kertoo kayttoliittymalle voitosta.
+     * 
+     * null tarkistus on RuutujenPainajaTest luokkaa varten
+     */
+    public static void voitit() {
+        if (kayttoliittyma != null) {
+            kayttoliittyma.voitit();
+        }
     }
 }

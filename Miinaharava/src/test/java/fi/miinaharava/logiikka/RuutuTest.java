@@ -74,13 +74,14 @@ public class RuutuTest {
         assertEquals(Color.red, painike.getBackground());
         assertEquals(new Font("", Font.PLAIN, 30), painike.getFont());
         assertEquals(new Insets(12, 0, 0, 0), painike.getMargin());
+        assertFalse(ruutu.getPainike().isEnabled());
     }
     
     @Test
     public void tyhjanRuudunArvoOikein() {
         ruutu.setArvo(0);
         ruutu.paina();
-        painike.setText(painike.getText() + "a");
-        assertEquals("a", painike.getText());  
+        assertEquals("", painike.getText());
+        assertFalse(ruutu.getPainike().isEnabled());
     }
 }

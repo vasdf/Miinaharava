@@ -10,8 +10,10 @@ import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.Timer;
 import javax.swing.WindowConstants;
 
 /**
@@ -25,6 +27,8 @@ public class Kayttoliittyma implements Runnable {
     private Ruutu[][] ruudukko;
     private int sivunpituus;
     private Container c;
+    private Timer t;
+    private JLabel kello;
 
     /**
      * Konstruktorissa luodaa olio.
@@ -36,6 +40,7 @@ public class Kayttoliittyma implements Runnable {
         this.ruudukko = kentta.getKentta();
         this.sivunpituus = ruudukko.length;
         this.c = new Container();
+        
     }
 
     @Override
@@ -79,8 +84,16 @@ public class Kayttoliittyma implements Runnable {
         container.add(kenttapaneli, BorderLayout.CENTER);
 
         JPanel asetukset = new JPanel(new FlowLayout());
-
-        JLabel sivunpituusteksti = new JLabel("Sivunpituus:");
+        
+        JLabel aikateksti = new JLabel("Aika:");
+        asetukset.add(aikateksti); 
+        
+        kello = new JLabel("0");
+        t = new Timer(1000, new KellonPaivittaja(kello));
+        t.start();
+        asetukset.add(kello);
+        
+        JLabel sivunpituusteksti = new JLabel("     Sivunpituus:");
         asetukset.add(sivunpituusteksti);
 
         JTextField koko = new JTextField("", 3);
@@ -112,15 +125,30 @@ public class Kayttoliittyma implements Runnable {
         this.kentta = kentta;
         this.ruudukko = kentta.getKentta();
         this.sivunpituus = ruudukko.length;
-
+        
         c.removeAll();
-
+       
         c = luoKomponentit(c);
 
         frame.setContentPane(c);
 
         frame.revalidate();
-
+    }
+    
+    /**
+     * Metodi näyttää ilmoituksen ikkunassa kun pelaaja häviää.
+     */
+    public void havisit() {
+        t.stop();
+        JOptionPane.showMessageDialog(frame, "Hävisit");
+    }
+    
+    /**
+     * Metodi näyttää ilmoituksen ikkunassa kun pelaaja voitaa.
+     */
+    public void voitit() {
+        t.stop();
+        JOptionPane.showMessageDialog(frame, "Voitit!" + "\n" + "Aikasi: " + kello.getText() + "s");
     }
 
 }

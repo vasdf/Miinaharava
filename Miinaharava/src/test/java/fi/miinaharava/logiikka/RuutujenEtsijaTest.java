@@ -6,12 +6,12 @@ import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class VierekkaistenRuutujenEtsijaTest {
+public class RuutujenEtsijaTest {
 
     private RuutujenEtsija etsija;
     private Ruutu[][] ruudukko;
 
-    public VierekkaistenRuutujenEtsijaTest() {
+    public RuutujenEtsijaTest() {
     }
 
     @Before
