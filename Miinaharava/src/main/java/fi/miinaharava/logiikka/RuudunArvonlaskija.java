@@ -7,12 +7,6 @@ package fi.miinaharava.logiikka;
 public class RuudunArvonlaskija {
 
     private Ruutu[][] ruudukko;
-    
-    /**
-     * Konstruktori luo luokan.
-     */
-    public RuudunArvonlaskija() {
-    }
 
     /**
      * Metodi laskee parametrina annetun ruuduista koostuvan taulun jokaiselle

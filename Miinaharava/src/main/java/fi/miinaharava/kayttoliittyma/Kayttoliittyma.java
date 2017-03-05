@@ -150,5 +150,4 @@ public class Kayttoliittyma implements Runnable {
         t.stop();
         JOptionPane.showMessageDialog(frame, "Voitit!" + "\n" + "Aikasi: " + kello.getText() + "s");
     }
-
 }

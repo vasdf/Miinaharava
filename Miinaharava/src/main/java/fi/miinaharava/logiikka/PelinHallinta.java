@@ -23,6 +23,8 @@ public class PelinHallinta {
 
     /**
      * Metodi luo käyttöliittymän ja aloittaa pelin.
+     * 
+     * @see Kayttoliittyma#run() 
      */
     public void aloitaPeli() {
         kayttoliittyma = new Kayttoliittyma(kentta);
@@ -35,6 +37,8 @@ public class PelinHallinta {
      *
      * @param sivunpituus Käyttäjän haluama sivunpituus
      * @param miinojenmaara Käyttäjän haluama miinojen määrä
+     * 
+     * @see Kayttoliittyma#uusiPeli(fi.miinaharava.logiikka.Kentta) 
      */
     public static void uusiPeli(int sivunpituus, int miinojenmaara) {
         kentta = new Kentta(sivunpituus, miinojenmaara);
@@ -46,6 +50,8 @@ public class PelinHallinta {
      * Metodi kertoo kayttoliittymalle häviöstä.
      * 
      * null tarkistus on RuutujenPainajaTest luokkaa varten
+     * 
+     * @see Kayttoliittyma#havisit() 
      */
     public static void havisit() {
         if (kayttoliittyma != null) {
@@ -57,6 +63,8 @@ public class PelinHallinta {
      * Metodi kertoo kayttoliittymalle voitosta.
      * 
      * null tarkistus on RuutujenPainajaTest luokkaa varten
+     * 
+     * @see Kayttoliittyma#voitit() 
      */
     public static void voitit() {
         if (kayttoliittyma != null) {

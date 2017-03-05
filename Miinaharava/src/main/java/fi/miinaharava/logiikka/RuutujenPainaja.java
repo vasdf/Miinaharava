@@ -27,6 +27,8 @@ public class RuutujenPainaja {
      * seuraavaa metodia.
      * 
      * @param ruutu Ruutu, jota halutaan painaa
+     * 
+     * @see Ruutu#paina() 
      */
     public void paina(Ruutu ruutu) {
         ruutu.paina();
@@ -34,6 +36,7 @@ public class RuutujenPainaja {
         if (ruutu.onkoMiina()) {
             painaKaikkia();
             PelinHallinta.havisit();
+            return;
         }
         
         if (ruutu.getArvo() == 0) {
@@ -52,6 +55,8 @@ public class RuutujenPainaja {
      * painetulle ruudulle.
      * 
      * @param ruutu Ruutu, jonka ympärillä olevat ruudut halutaan painaa
+     * 
+     * @see RuutujenEtsija#etsiVierekkaisetRuudut(fi.miinaharava.logiikka.Ruutu) 
      */
     public void painaKaikkiaYmparillaOlevia(Ruutu ruutu) {
         ArrayList<Ruutu> vierekkaiset = etsija.etsiVierekkaisetRuudut(ruutu);

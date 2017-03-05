@@ -16,4 +16,6 @@ Päivä | Tunnit | Kuvaus
 22.02.2017 | 3h | Koodia
 23.02.2017 | 2h | Demotilaisuuteen koodin valmistamista
 24.02.2017 | 2h | javadoc ja dl6
-27.02.2017 | 3h | Pelinloppuminen, sekuntikello, testejä
+27.02.2017 | 4h | Pelinloppuminen, sekuntikello, testejä
+03.03.2017 | 2h | Parin bugin korjaus
+04.03.2017 | 2h | Javadocin viimeistelyä

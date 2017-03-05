@@ -33,7 +33,11 @@ public class Kentta {
     }
     
     /**
-     * Metodi luo Ruutu olioille tehtyyn taulukkoon Ruutu olioit.
+     * Metodi luo Ruutu olioille tehtyyn taulukkoon Ruutu olioit
+     * ja muut tarvittavat oliot.
+     * 
+     * @see Miinojenluoja#luoMiinatSatunnaisesti(fi.miinaharava.logiikka.Ruutu[][]) 
+     * @see RuudunArvonlaskija#laskeArvot(fi.miinaharava.logiikka.Ruutu[][]) 
      */
     private void luoPelialusta() {
         for (int y = 0; y < sivunpituus; y++) {
@@ -61,6 +65,8 @@ public class Kentta {
      * Metodi kutsuu VierekkaisteRuutujenPainajan metodia paina.
      *
      * @param ruutu TapahtumaKuuntelijalta saatu Ruutu, jota painettiin
+     * 
+     * @see RuutujenPainaja#paina(fi.miinaharava.logiikka.Ruutu) 
      */
     public void paina(Ruutu ruutu) {
         painaja.paina(ruutu);

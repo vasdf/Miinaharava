@@ -34,6 +34,8 @@ public class Miinojenluoja {
      * @param ruudukko  Kentta luokan luoma ruudukko
      * 
      * @return taulukko, jossa Ruutuja on muunnettu miinoiksi haluttu määrä
+     * 
+     * @see Ruutu#asetaMiina() 
      */
     public Ruutu[][] luoMiinatSatunnaisesti(Ruutu[][] ruudukko) {
         this.ruudukko = ruudukko;

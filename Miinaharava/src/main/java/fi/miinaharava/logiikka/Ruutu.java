@@ -48,8 +48,10 @@ public class Ruutu {
             painike.setFont(new Font("", Font.PLAIN, 30));
             painike.setMargin(new Insets(12, 0, 0, 0));
             painike.setBackground(Color.red);
+            
         } else if (arvo == 0) {
             painike.setText("");
+            
         } else {
             painike.setText("" + arvo);
             painike.setMargin(new Insets(0, 0, 0, 0));
