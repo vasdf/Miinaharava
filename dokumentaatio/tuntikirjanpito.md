@@ -19,3 +19,4 @@ Päivä | Tunnit | Kuvaus
 27.02.2017 | 4h | Pelinloppuminen, sekuntikello, testejä
 03.03.2017 | 2h | Parin bugin korjaus
 04.03.2017 | 2h | Javadocin viimeistelyä
+05.03.2017 | 2h | Projektin viimeistelyä palautusta varten
