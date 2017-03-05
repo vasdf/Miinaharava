@@ -62,7 +62,7 @@ public class Kentta {
     }
 
     /**
-     * Metodi kutsuu VierekkaisteRuutujenPainajan metodia paina.
+     * Metodi kutsuu RuutujenPainaja luokan metodia paina.
      *
      * @param ruutu TapahtumaKuuntelijalta saatu Ruutu, jota painettiin
      * 

@@ -1,5 +1,6 @@
 package fi.miinaharava.logiikka;
 
+import javax.swing.JButton;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -34,5 +35,10 @@ public class KenttaTest {
     @Test(expected=ArrayIndexOutOfBoundsException.class)
     public void kenttaLuodaanOikeanKokoiseksi() {
         kentta.getKentta()[10][5].getX();
+    }
+    
+    @Test
+    public void ruuduillaJButtonit() {
+        assertEquals(kentta.getKentta()[2][2].getPainike().getClass(), JButton.class);
     }
 }
