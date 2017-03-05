@@ -22,6 +22,8 @@ RuutujenPainaja luokkaa kutsutaan kun TapahtumaKuuntelija, joka liittyy JButtone
 
 ![Luokkakaavio](luokkakaavio5.0.png)
 
+(Jotain ei niin olennaisia asioita jätetty pois sekvenssikaavioista, luettavuuden säilyttämiseksi)
+
 ![Sekvenssikaavio](sekvenssikaavio1.png)
 ![Sekvenssikaavio](sekvenssikaavio2.png)
 
